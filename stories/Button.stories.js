@@ -5,9 +5,7 @@ export default {
   title: 'Example/Button',
   component: Button,
   tags: ['autodocs'],
-  argTypes: {
-    backgroundColor: { control: 'color' },
-  },
+  argTypes: {},
 };
 
 // More on writing stories with args: https://storybook.js.org/docs/react/writing-stories/args

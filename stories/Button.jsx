@@ -5,13 +5,22 @@ import './button.css';
 /**
  * Primary UI component for user interaction
  */
-export const Button = ({ primary, backgroundColor, size, label, ...props }) => {
-  const mode = primary ? 'storybook-button--primary' : 'storybook-button--secondary';
+export const Button = ({ primary, size, label, ...props }) => {
+  const buttonMode = primary ? 'bg-blue hover:bg-blue-700 text-white' : 'outline outline-2 outline-blue text-blue';
+  const buttonSize = (() => {
+    switch(size) {
+      case "small":
+        return 'text-xs	py-1 px-2';
+      case "large":
+        return 'py-1 px-4';
+      default:
+        return 'text-sm	py-1 px-3'
+    }
+  })();
   return (
     <button
       type="button"
-      className={['outline outline-pink-500', 'storybook-button', `storybook-button--${size}`, mode].join(' ')}
-      style={backgroundColor && { backgroundColor }}
+      className={['rounded-xl font-semibold uppercase', buttonSize, buttonMode].join(' ')}
       {...props}
     >
       {label}
@@ -24,10 +33,6 @@ Button.propTypes = {
    * Is this the principal call to action on the page?
    */
   primary: PropTypes.bool,
-  /**
-   * What background color to use
-   */
-  backgroundColor: PropTypes.string,
   /**
    * How large should the button be?
    */
@@ -43,7 +48,6 @@ Button.propTypes = {
 };
 
 Button.defaultProps = {
-  backgroundColor: null,
   primary: false,
   size: 'medium',
   onClick: undefined,
