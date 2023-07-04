@@ -1,8 +1,8 @@
-import { Header } from './Header';
+import { More } from '../groups/More';
 
 export default {
-  title: 'Example/Header',
-  component: Header,
+  title: 'Design System/Groups/More',
+  component: More,
   // This component will have an automatically generated Autodocs entry: https://storybook.js.org/docs/react/writing-docs/autodocs
   tags: ['autodocs'],
   parameters: {
@@ -11,12 +11,6 @@ export default {
   },
 };
 
-export const LoggedIn = {
-  args: {
-    user: {
-      name: 'Jane Doe',
-    },
-  },
+export const Primary = {
+  args: {},
 };
-
-export const LoggedOut = {};
