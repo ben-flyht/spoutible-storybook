@@ -1,11 +1,14 @@
 {
   "name": "spoutible-storybook",
+  "homepage": "http://ben-flyht.github.io/spoutible-storybook",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "storybook": "storybook dev -p 6006",
+    "predeploy": "npm run build-storybook",
+    "deploy-storybook": "gh-pages -d storybook-static",
     "build-storybook": "storybook build"
   },
   "keywords": [],
@@ -21,6 +24,7 @@
     "@storybook/react": "^7.0.25",
     "@storybook/react-webpack5": "^7.0.25",
     "@storybook/testing-library": "^0.0.14-next.2",
+    "gh-pages": "^5.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "storybook": "^7.0.25"
